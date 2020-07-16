@@ -43,4 +43,15 @@ public class Office {
 
     public Office() {
     }
+
+    @Override
+    public String toString() {
+        return "Office{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isActive=" + isActive +
+                ", organization=" + organization +
+                '}';
+    }
 }

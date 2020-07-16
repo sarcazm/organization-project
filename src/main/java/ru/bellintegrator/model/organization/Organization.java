@@ -52,4 +52,17 @@ public class Organization {
         this.phone = phone;
         this.isActive = isActive;
     }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "name='" + name + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", inn='" + inn + '\'' +
+                ", kpp='" + kpp + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", isActive=" + isActive +
+                '}';
+    }
 }
