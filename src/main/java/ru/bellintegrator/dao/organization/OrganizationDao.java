@@ -4,6 +4,7 @@ package ru.bellintegrator.dao.organization;
 import ru.bellintegrator.model.organization.Organization;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * DAO для работы с Organization
@@ -16,6 +17,13 @@ public interface OrganizationDao {
      * @return
      */
     List<Organization> all();
+
+    /**
+     * Получить все объекты Organization
+     *
+     * @return
+     */
+    List<Organization> allByParam(Map<String, String> params, Boolean isActive);
 
     /**
      * Получить Organization по идентификатору
@@ -31,5 +39,6 @@ public interface OrganizationDao {
      * @param organization
      */
     void save(Organization organization);
+
 
 }
