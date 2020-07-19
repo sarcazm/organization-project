@@ -2,6 +2,7 @@ package ru.bellintegrator.service.organization;
 
 import org.springframework.validation.annotation.Validated;
 import ru.bellintegrator.dto.OrganizationDto;
+import ru.bellintegrator.model.organization.Organization;
 
 
 import javax.validation.Valid;
@@ -21,5 +22,21 @@ public interface OrganizationService {
      *
      * @return {@Organization}
      */
-    List<OrganizationDto> organizations();
+    List<OrganizationDto> foundOrganizationsByParams(OrganizationDto organizationDto);
+
+    /**
+     * Получить организацию по id
+     *
+     * @return {@Organization}
+     */
+    OrganizationDto foundById(Long id);
+
+    /**
+     * Обновить организацию по параметрам
+     *
+     * @return {@Organization}
+     */
+    void updateByParams(OrganizationDto organizationDto);
+
+    void saveByParams(OrganizationDto organizationDto);
 }
