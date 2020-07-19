@@ -7,6 +7,7 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import ru.bellintegrator.helper.organization.OrganizationHelper;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Locale;
@@ -17,6 +18,11 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Bean
+    public OrganizationHelper getOrganizationHelper(){
+        return new OrganizationHelper();
     }
 
     @Bean

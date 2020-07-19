@@ -9,6 +9,9 @@ import java.util.Map;
 
 public class OrganizationHelper {
 
+    public OrganizationHelper() {
+    }
+
     public Map<String, String> paramsToMap(OrganizationDto dto){
         Map<String, String> params = new LinkedHashMap<>();
         params.put("name", dto.name);
