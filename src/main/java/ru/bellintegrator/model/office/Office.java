@@ -44,6 +44,15 @@ public class Office {
     public Office() {
     }
 
+    public Office(String name, String address, String phone, Boolean isActive) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.isActive = isActive;
+    }
+
+
+
     @Override
     public String toString() {
         return "Office{" +
