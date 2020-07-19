@@ -43,8 +43,6 @@ public class OrganizationDaoImpl implements OrganizationDao{
         Root<Organization> organizationRoot = organizationCriteria.from(Organization.class);
         organizationCriteria.select(organizationRoot).where(cb.equal(organizationRoot.get("isActive"), isActive));
         params.forEach((key, value) -> organizationCriteria.select(organizationRoot).where(organizationRoot.get(String.valueOf(key)).in(String.valueOf(value))));
-        //isactive как сделать?
-
         return em.createQuery(organizationCriteria).getResultList();
     }
 
