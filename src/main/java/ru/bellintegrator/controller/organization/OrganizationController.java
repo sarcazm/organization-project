@@ -3,10 +3,8 @@ package ru.bellintegrator.controller.organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.bellintegrator.dto.OrganizationDto;
+import ru.bellintegrator.model.wrapper.response.Data;
 import ru.bellintegrator.service.organization.OrganizationService;
-
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/organization")
@@ -18,11 +16,43 @@ public class OrganizationController {
         this.organizationService = organizationService;
     }
     @PostMapping("/list")
-    public List<OrganizationDto> organizations(){
-        return organizationService.organizations();
+    public <T> T organizations(@RequestBody OrganizationDto organizationDto){
+        try{
+            return (T) organizationService.foundOrganizationsByParams(organizationDto);
+        }catch (RuntimeException ex){
+            return (T) ("error:" + ex.getMessage());
+        }
     }
+
     @GetMapping("/{id}")
-    public OrganizationDto getById(@PathVariable("id") Long id){
-        return null;
+    public <T> T getById(@PathVariable("id") Long id){
+        try{
+            return (T) new Data<OrganizationDto>(organizationService.foundById(id));
+
+        }catch (RuntimeException ex){
+            return (T) ("error:" + ex.getMessage());
+        }
+    }
+
+    @PostMapping("/update")
+    public <T> T update(@RequestBody OrganizationDto organizationDto){
+        try{
+            organizationService.updateByParams(organizationDto);
+        }catch (RuntimeException ex){
+            return (T) ("error:" + ex.getMessage());
+        }
+        String result = "{\"result\":\"success\"}";
+        return (T) result;
+    }
+
+    @PostMapping("/save")
+    public <T> T save(@RequestBody OrganizationDto organizationDto){
+        try{
+            organizationService.saveByParams(organizationDto);
+        }catch (RuntimeException ex){
+            return (T) ("error:" + ex.getMessage());
+        }
+        String result = "{\"result\":\"success\"}";
+        return (T) result;
     }
 }
