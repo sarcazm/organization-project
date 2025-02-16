@@ -2,6 +2,7 @@ INSERT INTO Organization (id, version, name, full_name, inn, kpp, address, phone
 (1, 0, 'Ромашка', 'ООО Ромашка', '9578457445', '440010101', 'Moscow', '4955748596', true),
 (2, 0, 'Ангстрем', 'ООО Ангстрем', '9907445724', '444000101', 'Saratov', '8452748596', true),
 (3, 0, 'Миландр ЭК', 'АО Миландр ЭК', '1234567890', '400122460', 'St Petersburg', '8125521420', true);
+(3, 0, 'Миландр ЭК2', 'АО Миландр ЭК2', '1234567890', '400122460', 'St Petersburg', '8125521420', true);
 
 
 INSERT INTO Office (id, version, organization_id, name, address, phone, is_active) VALUES
