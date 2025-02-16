@@ -15,30 +15,32 @@ public class OrganizationController {
     public OrganizationController(OrganizationService organizationService) {
         this.organizationService = organizationService;
     }
+
     @PostMapping("/list")
-    public <T> T organizations(@RequestBody OrganizationDto organizationDto){
-        try{
+    public <T> T organizations(@RequestBody OrganizationDto organizationDto) {
+        try {
+
             return (T) organizationService.foundOrganizationsByParams(organizationDto);
-        }catch (RuntimeException ex){
+        } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
         }
     }
 
     @GetMapping("/{id}")
-    public <T> T getById(@PathVariable("id") Long id){
-        try{
+    public <T> T getById(@PathVariable("id") Long id) {
+        try {
             return (T) new Data<OrganizationDto>(organizationService.foundById(id));
 
-        }catch (RuntimeException ex){
+        } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
         }
     }
 
     @PostMapping("/update")
-    public <T> T update(@RequestBody OrganizationDto organizationDto){
-        try{
+    public <T> T update(@RequestBody OrganizationDto organizationDto) {
+        try {
             organizationService.updateByParams(organizationDto);
-        }catch (RuntimeException ex){
+        } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
         }
         String result = "{\"result\":\"success\"}";
@@ -46,10 +48,10 @@ public class OrganizationController {
     }
 
     @PostMapping("/save")
-    public <T> T save(@RequestBody OrganizationDto organizationDto){
-        try{
+    public <T> T save(@RequestBody OrganizationDto organizationDto) {
+        try {
             organizationService.saveByParams(organizationDto);
-        }catch (RuntimeException ex){
+        } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
         }
         String result = "{\"result\":\"success\"}";
