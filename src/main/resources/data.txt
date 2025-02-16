@@ -11,6 +11,7 @@ INSERT INTO Office (id, version, organization_id, name, address, phone, is_activ
 (3, 0, 1, 'Ромашка-1', 'Moscow, Gogolya, 1к2', '4957411230', true),
 (4, 0, 2, 'Ангстрем-25', 'Saratov, Popova, 18', '8452748590', true),
 (5, 0, 2, 'Ангстрем-27', 'Saratov, Golikova, 13', '8452748591', false);
+(5, 0, 2, 'Ангстрем-28', 'Saratov, Golikova, 13', '8452748591', false);
 
 
 INSERT INTO Doc (id, version, name, code) VALUES
