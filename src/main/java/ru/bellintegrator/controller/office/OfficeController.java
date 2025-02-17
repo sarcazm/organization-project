@@ -6,4 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api/office")
 public class OfficeController {
+    void someMethod(){
+
+    }
 }
