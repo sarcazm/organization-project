@@ -20,6 +20,10 @@ public class OrganizationController {
     public <T> T organizations(@RequestBody OrganizationDto organizationDto) {
         try {
 
+            // for commit
+            // for commit2
+            // for commit3
+            // for commit4
             return (T) organizationService.foundOrganizationsByParams(organizationDto);
         } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
