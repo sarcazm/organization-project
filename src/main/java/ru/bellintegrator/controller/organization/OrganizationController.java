@@ -24,7 +24,7 @@ public class OrganizationController {
             // for commit2
             // for commit3
             // for commit4
-            return (T) organizationService.foundOrganizationsByParams(organizationDto);
+            return (T) organizationService.getOrganizationsByParams(organizationDto);
         } catch (RuntimeException ex) {
             return (T) ("error:" + ex.getMessage());
         }

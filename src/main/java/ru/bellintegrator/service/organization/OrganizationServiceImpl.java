@@ -33,7 +33,7 @@ public class OrganizationServiceImpl implements OrganizationService{
 
     @Override
     @Transactional(readOnly = true)
-    public List<OrganizationDto> foundOrganizationsByParams(@NonNull OrganizationDto organizationDto) throws RuntimeException{
+    public List<OrganizationDto> getOrganizationsByParams(@NonNull OrganizationDto organizationDto) throws RuntimeException{
         List<OrganizationDto> result = new ArrayList<>();
         if (organizationDto.name == null){
             throw new RuntimeException("name is null");
